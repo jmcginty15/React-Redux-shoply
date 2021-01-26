@@ -15,6 +15,7 @@
     grid-template-columns: 50% 50%;
     width: 100%;
     margin: auto;
+    grid-column-start: 2;
 }
 
 .ProductList-price-label, .ProductList-price {
@@ -50,4 +51,19 @@
 
 .ProductList-back:hover {
     background-color: darkblue;
+}
+
+.ProductList-line {
+    grid-column-start: 2;
+    border-color: black;
+    height: 0;
+    width: 75%;
+}
+
+.ProductList-discount {
+    color: green;
+}
+
+.ProductList-tax {
+    color: red;
 }

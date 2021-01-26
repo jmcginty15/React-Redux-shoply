@@ -1,0 +1,72 @@
+.DiscountForm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: lightblue;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.DiscountForm-button {
+    color: white;
+    background-color: blue;
+    border-color: darkblue;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.DiscountForm-button:hover {
+    cursor: pointer;
+    background-color: darkblue;
+}
+
+.DiscountForm-input-container {
+    padding: 10px;
+}
+
+.DiscountForm-input {
+    margin-left: 5px;
+}
+
+.DiscountForm-invalid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-style: solid;
+    border-color: darkred;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.DiscountForm-discount-display {
+    color: white;
+    background-color: green;
+    border-color: darkgreen;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.DiscountForm-button-remove {
+    color: black;
+    background-color: yellow;
+    border-color: goldenrod;
+}
+
+.DiscountForm-button-remove:hover {
+    background-color: goldenrod;
+}

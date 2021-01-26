@@ -1,5 +1,5 @@
 const inventory = require('./data.json');
-const rootReducer = require('./rootReducer.js');
+const { rootReducer } = require('./rootReducer.js');
 const { add, remove } = require('./actions.js');
 
 const keys = Object.keys(inventory.products);
@@ -9,7 +9,20 @@ for (let key of keys) {
     nextProduct.id = key;
     products.push(nextProduct);
 }
-const INITIAL_STATE = { inventory: products, cart: { totalPrice: 0, totalItems: 0, items: [] } };
+const INITIAL_STATE = {
+    inventory: products,
+    cart: {
+        totalPrice: 0,
+        totalItems: 0,
+        tax: 0,
+        discount: {
+            percentage: 0,
+            amount: 0
+        },
+        grandTotal: 0,
+        items: []
+    }
+};
 
 describe('default output', function () {
     it('is a function', function () {
@@ -29,6 +42,12 @@ describe('ADD action', function () {
             cart: {
                 totalItems: 1,
                 totalPrice: 100,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 7.25,
+                grandTotal: 107.25,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -47,6 +66,12 @@ describe('ADD action', function () {
             cart: {
                 totalItems: 1,
                 totalPrice: 100,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 7.25,
+                grandTotal: 107.25,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -61,6 +86,12 @@ describe('ADD action', function () {
             cart: {
                 totalItems: 2,
                 totalPrice: 200,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 14.5,
+                grandTotal: 214.5,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -79,6 +110,12 @@ describe('ADD action', function () {
             cart: {
                 totalItems: 3,
                 totalPrice: 300,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 21.75,
+                grandTotal: 321.75,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -99,6 +136,12 @@ describe('REMOVE action', function () {
             cart: {
                 totalItems: 1,
                 totalPrice: 100,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 7.25,
+                grandTotal: 107.25,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -119,6 +162,12 @@ describe('REMOVE action', function () {
             cart: {
                 totalItems: 3,
                 totalPrice: 300,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 21.75,
+                grandTotal: 321.75,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],
@@ -133,6 +182,12 @@ describe('REMOVE action', function () {
             cart: {
                 totalItems: 2,
                 totalPrice: 200,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 14.5,
+                grandTotal: 214.5,
                 items: [
                     {
                         ...INITIAL_STATE.inventory[1],

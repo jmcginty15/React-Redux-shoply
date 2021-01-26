@@ -3,7 +3,7 @@ import DiscountForm from './DiscountForm';
 import { Link } from 'react-router-dom';
 import './ProductList.css';
 
-const ProductList = ({ products, totalItems, totalPrice }) => {
+const ProductList = ({ products, totalItems, totalPrice, tax, discount, grandTotal }) => {
     return (
         <div className="ProductList">
             {totalItems ? <h1>Cart</h1> : null}
@@ -21,12 +21,15 @@ const ProductList = ({ products, totalItems, totalPrice }) => {
                     <div className="ProductList-price-container">
                         <h2 className="ProductList-price-label">Order price:</h2>
                         <h2 className="ProductList-price">${totalPrice.toFixed(2)}</h2>
-                        <h2 className="ProductList-price-label">Discount:</h2>
-                        <h2 className="ProductList-price">Butt</h2>
-                        <h2 className="ProductList-price-label">Tax:</h2>
-                        <h2 className="ProductList-price">Butt</h2>
+                        {discount.percentage ? <h2 className="ProductList-price-label">{discount.percentage * 100}% discount:</h2> : null}
+                        {discount.percentage ? <h2 className="ProductList-price">- <span className="ProductList-discount">${discount.amount.toFixed(2)}</span></h2> : null}
+                        <h2 className="ProductList-price-label">7.25% tax:</h2>
+                        <h2 className="ProductList-price">+ <span className="ProductList-tax">${tax.toFixed(2)}</span></h2>
+                    </div>
+                    <hr className="ProductList-line" />
+                    <div className="ProductList-price-container">
                         <h2 className="ProductList-price-label">Total:</h2>
-                        <h2 className="ProductList-price">Butt</h2>
+                        <h2 className="ProductList-price">${grandTotal.toFixed(2)}</h2>
                     </div>
                 </div>
             ) : null}

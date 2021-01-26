@@ -1,6 +1,7 @@
 import ProductList from './ProductList';
 import FullProduct from './FullProduct';
 import NavBar from './NavBar';
+import Home from './Home';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
@@ -15,7 +16,7 @@ function App() {
       <NavBar />
         <Switch>
           <Route exact path="/">
-            Butt
+            <Home />
           </Route>
           <Route exact path="/products">
             <ProductList products={products} />
@@ -24,7 +25,7 @@ function App() {
             <FullProduct />
           </Route>
           <Route exact path="/cart">
-            <ProductList products={cart.items} totalItems={cart.totalItems} totalPrice={cart.totalPrice} />
+            <ProductList products={cart.items} totalItems={cart.totalItems} totalPrice={cart.totalPrice} tax={cart.tax} discount={cart.discount} grandTotal={cart.grandTotal} />
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -10,7 +10,7 @@ const NavBar = () => {
             <li className="NavLink-left"><NavLink to="/">Shoply</NavLink></li>
             <li className="NavLink-right">
                 <NavLink to="/cart">
-                    <i className="fa fa-shopping-cart"></i> | {cart.totalItems} Item{cart.totalItems === 1 ? null : 's'} | ${cart.totalPrice.toFixed(2)}
+                    <i className="fa fa-shopping-cart"></i> | {cart.totalItems} Item{cart.totalItems === 1 ? null : 's'} | ${cart.grandTotal.toFixed(2)}
                 </NavLink>
             </li>
             <li className="NavLink-right"><NavLink to="/products">Products</NavLink></li>

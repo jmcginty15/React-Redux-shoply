@@ -34,7 +34,10 @@ const FullProduct = () => {
                     </div>
                 </form>
                 <p className="FullProduct-cart">Currently in cart: {cartProduct ? cartProduct.qty : 0}</p>
-                <Link className="FullProduct-back" to="/products">Back to list</Link>
+                <div className="FullProduct-link-container">
+                    <Link className="FullProduct-back" to="/products">Back to list</Link>
+                    <Link className="FullProduct-back" to="/cart">Back to cart</Link>
+                </div>
             </div>
         </div>
     )
