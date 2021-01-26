@@ -1,4 +1,4 @@
-import inventory from './data.json';
+const inventory = require('./data.json');
 
 const keys = Object.keys(inventory.products);
 const products = [];
@@ -81,4 +81,4 @@ const findIndex = (inventory, id) => {
     return null;
 }
 
-export default rootReducer;
+module.exports = { rootReducer, findItem };

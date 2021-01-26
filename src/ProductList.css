@@ -1,4 +1,53 @@
 .ProductList {
     width: 50%;
     margin: auto;
+    margin-top: 75px;
+}
+
+.ProductList-totals {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 25px;
+}
+
+.ProductList-price-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin: auto;
+}
+
+.ProductList-price-label, .ProductList-price {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.ProductList-price-label {
+    width: 100%;
+}
+
+.ProductList-price {
+    width: 75%;
+}
+
+.ProductList-back {
+    display: flex;
+    background-color: blue;
+    border-color: darkblue;
+    border-style: solid;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.ProductList-back:hover {
+    background-color: darkblue;
 }

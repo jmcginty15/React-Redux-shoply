@@ -1,0 +1,115 @@
+.FullProduct {
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 10px;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: lightblue;
+    padding: 10px;
+    margin-top: 75px;
+}
+
+.FullProduct-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.FullProduct-info {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.FullProduct-description {
+    text-align: left;
+}
+
+.FullProduct-form {
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.FullProduct-quantity {
+    width: 35px;
+    margin-left: 10px;
+}
+
+.FullProduct-button-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.FullProduct-button {
+    color: white;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.FullProduct-button:hover {
+    cursor: pointer;
+}
+
+.FullProduct-button-add {
+    background-color: green;
+    border-color: darkgreen;
+}
+
+.FullProduct-button-add:hover {
+    background-color: darkgreen;
+}
+
+.FullProduct-button-remove {
+    background-color: red;
+    border-color: darkred;
+}
+
+.FullProduct-button-remove:hover {
+    background-color: darkred;
+}
+
+.FullProduct-back {
+    display: flex;
+    background-color: blue;
+    border-color: darkblue;
+    border-style: solid;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.FullProduct-back:hover {
+    background-color: darkblue;
+}
+
+.FullProduct-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+}

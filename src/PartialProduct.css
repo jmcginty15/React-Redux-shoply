@@ -1,0 +1,117 @@
+.PartialProduct {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10px;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: lightblue;
+    margin: 15px;
+    padding: 10px;
+}
+
+.PartialProduct-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.PartialProduct-info {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.PartialProduct-description {
+    text-align: left;
+}
+
+.PartialProduct-form {
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.PartialProduct-quantity {
+    width: 35px;
+    margin-left: 10px;
+}
+
+.PartialProduct-button-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.PartialProduct-button {
+    color: white;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.PartialProduct-button:hover {
+    cursor: pointer;
+}
+
+.PartialProduct-button-add {
+    background-color: green;
+    border-color: darkgreen;
+}
+
+.PartialProduct-button-add:hover {
+    background-color: darkgreen;
+}
+
+.PartialProduct-button-remove {
+    background-color: red;
+    border-color: darkred;
+}
+
+.PartialProduct-button-remove:hover {
+    background-color: darkred;
+}
+
+.PartialProduct-link {
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    background-color: blue;
+    border-color: darkblue;
+    border-style: solid;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.PartialProduct-link:hover {
+    background-color: darkblue;
+}
+
+.PartialProduct-cart {
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.PartialProduct-link-container {
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: 100%;
+    margin-right: 10px;
+}

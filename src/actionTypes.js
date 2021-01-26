@@ -1,2 +1,4 @@
-export const ADD = 'ADD';
-export const REMOVE = 'REMOVE';
+const ADD = 'ADD';
+const REMOVE = 'REMOVE';
+
+module.exports = { ADD, REMOVE };

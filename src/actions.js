@@ -1,6 +1,6 @@
-import { ADD, REMOVE } from './actionTypes';
+const { ADD, REMOVE } = require('./actionTypes.js');
 
-export const add = (id, qty) => {
+const add = (id, qty) => {
     return {
         type: ADD,
         payload: {
@@ -10,7 +10,7 @@ export const add = (id, qty) => {
     };
 }
 
-export const remove = (id, qty) => {
+const remove = (id, qty) => {
     return {
         type: REMOVE,
         payload: {
@@ -19,3 +19,5 @@ export const remove = (id, qty) => {
         }
     };
 }
+
+module.exports = { add, remove };
