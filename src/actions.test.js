@@ -1,4 +1,4 @@
-const { add, remove } = require('./actions.js');
+const { add, remove, applyDiscount, removeDiscount } = require('./actions.js');
 
 describe('add function', function () {
     it('is a function', function () {
@@ -45,5 +45,53 @@ describe('remove function', function () {
                 qty: 1
             }
         })
+    });
+});
+
+describe('applyDiscount function', function () {
+    it('is a function', function () {
+        expect(typeof applyDiscount).toBe('function');
+    });
+
+    it('returns the correct action object', function () {
+        expect(applyDiscount('REMOVE10')).toEqual({
+            type: 'APPLY_DISCOUNT',
+            payload: {
+                discountPercent: 0.1
+            }
+        });
+
+        expect(applyDiscount('REMOVE20')).toEqual({
+            type: 'APPLY_DISCOUNT',
+            payload: {
+                discountPercent: 0.2
+            }
+        });
+
+        expect(applyDiscount('REMOVE30')).toEqual({
+            type: 'APPLY_DISCOUNT',
+            payload: {
+                discountPercent: 0.3
+            }
+        });
+    });
+
+    it('returns null for an invalid discount code', function () {
+        expect(applyDiscount('invalidcode')).toBe(null);
+    });
+});
+
+describe('removeDiscount function', function () {
+    it('is a function', function () {
+        expect(typeof removeDiscount).toBe('function');
+    });
+
+    it('returns the correct action object', function () {
+        expect(removeDiscount()).toEqual({
+            type: 'APPLY_DISCOUNT',
+            payload: {
+                discountPercent: 0
+            }
+        });
     });
 });

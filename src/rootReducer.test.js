@@ -1,6 +1,6 @@
 const inventory = require('./data.json');
 const { rootReducer } = require('./rootReducer.js');
-const { add, remove } = require('./actions.js');
+const { add, remove, applyDiscount, removeDiscount } = require('./actions.js');
 
 const keys = Object.keys(inventory.products);
 const products = [];
@@ -195,6 +195,98 @@ describe('REMOVE action', function () {
                         totalPrice: 200
                     }
                 ]
+            }
+        });
+    });
+});
+
+describe('APPLY_DISCOUNT action', function () {
+    it('applies the correct discount', function () {
+        const CURRENT_STATE = {
+            ...INITIAL_STATE,
+            cart: {
+                totalItems: 1,
+                totalPrice: 100,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                tax: 7.25,
+                grandTotal: 107.25,
+                items: [
+                    {
+                        ...INITIAL_STATE.inventory[1],
+                        qty: 1,
+                        totalPrice: 100
+                    }
+                ]
+            }
+        };
+        expect(rootReducer(CURRENT_STATE, applyDiscount('REMOVE10'))).toEqual({
+            ...CURRENT_STATE,
+            cart: {
+                ...CURRENT_STATE.cart,
+                discount: {
+                    percentage: 0.1,
+                    amount: 10
+                },
+                grandTotal: 97.25
+            }
+        });
+        expect(rootReducer(CURRENT_STATE, applyDiscount('REMOVE20'))).toEqual({
+            ...CURRENT_STATE,
+            cart: {
+                ...CURRENT_STATE.cart,
+                discount: {
+                    percentage: 0.2,
+                    amount: 20
+                },
+                grandTotal: 87.25
+            }
+        });
+        expect(rootReducer(CURRENT_STATE, applyDiscount('REMOVE30'))).toEqual({
+            ...CURRENT_STATE,
+            cart: {
+                ...CURRENT_STATE.cart,
+                discount: {
+                    percentage: 0.3,
+                    amount: 30
+                },
+                grandTotal: 77.25
+            }
+        });
+    });
+
+    it('removes a discount', function () {
+        const CURRENT_STATE = {
+            ...INITIAL_STATE,
+            cart: {
+                totalItems: 1,
+                totalPrice: 100,
+                discount: {
+                    percentage: 0.1,
+                    amount: 10
+                },
+                tax: 7.25,
+                grandTotal: 97.25,
+                items: [
+                    {
+                        ...INITIAL_STATE.inventory[1],
+                        qty: 1,
+                        totalPrice: 100
+                    }
+                ]
+            }
+        };
+        expect(rootReducer(CURRENT_STATE, removeDiscount())).toEqual({
+            ...CURRENT_STATE,
+            cart: {
+                ...CURRENT_STATE.cart,
+                discount: {
+                    percentage: 0,
+                    amount: 0
+                },
+                grandTotal: 107.25
             }
         });
     });
